@@ -5,14 +5,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@ResponseBody
 public class SpringbootController {
 
 	
-	@GetMapping("/")
+	@GetMapping("/home")
 	public String firstHandler() {
 		System.out.println("This is Home Page");
-		return "Home";
+		return "home";
+	}
+	
+	@GetMapping("/contact")
+	public String ContactHandler() {
+		System.out.println("This is Contact Page");
+		return "contact";
 	}
 	
 }

@@ -1,2 +1,4 @@
 
 2. Create Folder structure- webapp/views in src/main (Here all .jsp would be stored)
+3. In application.properties give the prefix and suffix for telling the folder where .jsp files are placed.
+4. 
