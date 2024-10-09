@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class SpringbootController {
 
 	
-	@GetMapping("/test")
+	@GetMapping("/")
 	public String firstHandler() {
-		return "Just for testing";
+		System.out.println("This is Home Page");
+		return "Home";
 	}
 	
 }
