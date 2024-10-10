@@ -1,4 +1,18 @@
-
+1. Application.properties: For the configuration customization. (Only key/value pair)
+	a. Core properties
+	b. Cache properties
+	c. Mail properties
+	d. JSON properties
+	e. Data properties
+	f. Transaction properties
+	g. Data migration properties
+	h. Integration properties
+	i. Templating properties
+	J. Server properties
+	k. Security properties
+	l. Testing properties
 2. Create Folder structure- webapp/views in src/main (Here all .jsp would be stored)
 3. In application.properties give the prefix and suffix for telling the folder where .jsp files are placed.
-4. 
+4. In Spring controller create a Handler method for the home & contact with GetMapping and give the jsp name there.
+5. While running the application it will get the jsp file content and display on the screen.
+6.
