@@ -6,13 +6,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class User {
+public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String name;
 	
-	public User(int id, String name, String city, String status) {
+	public Employee(int id, String name, String city, String status) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -23,7 +23,7 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", city=" + city + ", status=" + status + "]";
 	}
-	public User() {
+	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
