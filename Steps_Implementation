@@ -15,4 +15,7 @@
 3. In application.properties give the prefix and suffix for telling the folder where .jsp files are placed.
 4. In Spring controller create a Handler method for the home & contact with GetMapping and give the jsp name there.
 5. While running the application it will get the jsp file content and display on the screen.
-6.
+6
+
+
+Project--> Entity --> Repository
