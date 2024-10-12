@@ -18,4 +18,4 @@
 6
 
 
-Project--> Entity --> Repository
+Project--> Controller --> Entity --> Repository --> Service

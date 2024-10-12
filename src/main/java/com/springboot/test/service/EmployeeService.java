@@ -21,8 +21,8 @@ public class EmployeeService {
 	}
 	
 	//add employee
-		public Employee addEmployee(Employee e) {
-			 Employee result= employeeRepository.save(e);
+		public Employee addEmployee(Employee employee) {
+			 Employee result= employeeRepository.save(employee);
 			 return result;
 		}
 	
