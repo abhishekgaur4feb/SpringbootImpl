@@ -16,14 +16,36 @@ public class EmployeeService {
 	
 	//Find all employee
 	public List<Employee> getAllEmployee(){
-	List<Employee> list= (List<Employee>) this.employeeRepository.findAll();
-	return list;
+	return (List<Employee>) this.employeeRepository.findAll(); 
 	}
 	
 	//add employee
 		public Employee addEmployee(Employee employee) {
 			 Employee result= employeeRepository.save(employee);
 			 return result;
-		}
+		}	
 	
+
+		//Get Employee by id
+		public Employee getEmployeedetailsById(int employeeid) {
+			Employee result= employeeRepository.findById(employeeid);	
+			return result;
+			
+		}
+		
+		//Delete Employee Information by id
+		public void deletEmployeeById(int employeeid) {
+			 employeeRepository.deleteById(employeeid);
+			
+			
+		}
+		
+		//delete all entries
+		public void deleteAllEmployee() {
+			employeeRepository.deleteAll();
+			
+		}
+
+
+
 }
