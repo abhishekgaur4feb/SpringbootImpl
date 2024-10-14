@@ -1,8 +1,12 @@
 package com.springboot.test;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.springboot.test.entities.Employee;
 import com.springboot.test.service.EmployeeService;
@@ -27,9 +32,12 @@ public class SpringbootController {
 	}
 	
 	@GetMapping("/employee/{id}")
-	public Employee findemployeedetails(@PathVariable("id") int employeeid){
-		return employeeService.getEmployeedetailsById(employeeid);
-		
+	public ResponseEntity<Employee> findemployeedetails(@PathVariable("id") int employeeid){
+		 Employee employee_details=  employeeService.getEmployeedetailsById(employeeid);
+		 if(employee_details==null) {
+			 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		 }
+		return ResponseEntity.of(Optional.of(employee_details));
 	}
 	
 	
@@ -40,9 +48,9 @@ public class SpringbootController {
 	
 	
 	@DeleteMapping("/deleteemployee/{id}")
-	public String deleteEmployeeByID(@PathVariable("id") int employeeid) {
+	public void deleteEmployeeByID(@PathVariable("id") int employeeid) {
 		 employeeService.deletEmployeeById(employeeid);
-		 return "Deleted Successfully";
+		 
 	}
 
 	

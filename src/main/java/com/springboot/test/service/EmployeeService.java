@@ -35,9 +35,7 @@ public class EmployeeService {
 		
 		//Delete Employee Information by id
 		public void deletEmployeeById(int employeeid) {
-			 employeeRepository.deleteById(employeeid);
-			
-			
+			employeeRepository.deleteById(employeeid);
 		}
 		
 		//delete all entries
